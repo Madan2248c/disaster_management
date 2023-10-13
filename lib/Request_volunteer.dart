@@ -10,10 +10,10 @@ class request_volunteer extends StatefulWidget {
 
 class _request_volunteerState extends State<request_volunteer> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromRGBO(86, 189, 84, 1),
+        backgroundColor: const Color.fromRGBO(86, 189, 84, 1),  
         appBar: AppBar(
           leading: SafeArea(
             child: InkWell(
