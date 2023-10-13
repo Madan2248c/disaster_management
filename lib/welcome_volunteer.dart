@@ -1,3 +1,4 @@
+import 'package:disaster_management/VolunteerRegistration.dart';
 import 'package:disaster_management/volunteerlogin1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -98,7 +99,12 @@ class _welcome_volunteerState extends State<welcome_volunteer> {
                   ),
                 )),
             TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const VolunteerRegistration()));
+                },
                 child: Container(
                   padding: const EdgeInsets.fromLTRB(50, 4, 50, 4),
                   decoration: BoxDecoration(
