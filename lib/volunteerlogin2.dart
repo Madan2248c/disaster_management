@@ -14,100 +14,121 @@ class _Volunteerlogin2State extends State<Volunteerlogin2> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromRGBO(86, 189, 84, 1),
-        appBar: AppBar(
-          leading: SafeArea(
-            child: InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: const Icon(
-                Icons.arrow_back_outlined,
-                size: 30,
-              ),
-            ),
-          ),
-          title: const Text(
-            "ADMS",
-            style: TextStyle(color: Colors.black, fontFamily: 'Abyssinica_SIL'),
-          ),
-        ),
         body: SingleChildScrollView(
+
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 90,
+              InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: SafeArea(
+                    child: Icon(
+                      CupertinoIcons.arrow_left,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
               ),
-              const Center(
-                  child: Text(
-                "LOGIN",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'Abyssinica_SIL',
-                    fontSize: 50,
-                    fontWeight: FontWeight.w500),
-              )),
+              const SizedBox(
+                height: 170,
+              ),
               const SizedBox(
                 height: 20,
               ),
-              Text(
-                "Welcome,",
-                style: TextStyle(fontSize: 40, fontFamily: 'Abyssinica_SIL'),
+              const Center(
+                child: Text(
+                  "Welcome,",
+                  style: TextStyle(
+                    color: Color(0XFF56BD54),
+                    fontSize: 40,
+                    fontFamily: 'poppins',
+                  ),
+                ),
               ),
-              Text("Madhav A Das",
-                  style: TextStyle(fontSize: 40, fontFamily: 'Abyssinica_SIL')),
+              const Center(
+                child: Text("Madhav A Das",
+                    style: TextStyle(
+                      color: Color(0XFF56BD54),
+                        fontSize: 40,
+                        fontFamily:
+                        'poppins')),
+              ),
               const SizedBox(
                 height: 50,
               ),
-              const Text(
-                "Enter OTP  to continue",
-                style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                width: 324,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
+              const Center(
+                child: Text(
+                  "Enter OTP  to continue",
+                  style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400),
                 ),
-                child: TextField(
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      hintText: 'OTP',
-                      focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.transparent))),
+              ),
+              const Center(
+                child: SizedBox(
+                  height: 20,
+                ),
+              ),
+              Center(
+                child: Container(
+                  width: 324,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: TextField(
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        hintText: 'OTP',
+                        focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.transparent))),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 40),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                    child: TextButton(
+                        onPressed: (){},
+                        child: const Text("Resend OTP",
+                        style:TextStyle(
+                          fontFamily: 'Inter',
+                        ),)
+                    )
                 ),
               ),
               const SizedBox(
                 height: 60,
               ),
-              TextButton(
-                  onPressed: () {},
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(50, 8, 50, 12),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.black,
-                    ),
-                    child: const Text(
-                      "LOGIN",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontFamily: 'Plus Jakarta Sans',
-                          fontWeight: FontWeight.w600),
-                    ),
-                  )),
+              Center(
+                child: TextButton(
+                    onPressed: () {},
+                    child: Container(
+                      padding: const EdgeInsets.fromLTRB(50, 8, 50, 12),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: const Color(0XFF56BD54),
+                      ),
+                      child: const Text(
+                        "LOGIN",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w600
+                        ),
+                      ),
+                    )),
+              ),
             ],
           ),
         ),

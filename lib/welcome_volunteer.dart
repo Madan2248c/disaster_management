@@ -3,8 +3,7 @@ import 'package:disaster_management/volunteerlogin1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:text_divider/text_divider.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
-
+import 'package:sign_button/sign_button.dart';
 class welcome_volunteer extends StatefulWidget {
   const welcome_volunteer({super.key});
 
@@ -17,37 +16,40 @@ class _welcome_volunteerState extends State<welcome_volunteer> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor:
-         const Color.fromRGBO(86, 189, 84, 1),
-        appBar: AppBar(
-          leading: SafeArea(
-            child: InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: const Icon(
-                Icons.arrow_back_outlined,
-                size: 30,
-              ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            InkWell(
+            onTap: () {
+      Navigator.pop(context);
+      },
+        child: const Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: SafeArea(
+            child: Icon(
+              CupertinoIcons.arrow_left,
+              color: Colors.black,
             ),
           ),
-          title: const Text(
-            "ADMS",
-            style: TextStyle(color: Colors.black, fontFamily: 'Abyssinica_SIL'),
-          ),
         ),
-        body: Column(
-          children: [
+      ),
             const SizedBox(
               height: 100,
             ),
             const Center(
               child: Text(
-                "Hi,",
+                "Dear,",
                 style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Abyssinica_SIL',
+                  color: Color(0XFF56BD54),
+                  fontFamily: 'poppins',
                   fontSize: 50,
+                  shadows: [
+                    Shadow(
+                      offset: Offset(0, 4),
+                      blurRadius: 4,
+                      color: Color.fromRGBO(0, 0, 0, 0.25),
+                    ),
+                  ]
                 ),
               ),
             ),
@@ -55,9 +57,16 @@ class _welcome_volunteerState extends State<welcome_volunteer> {
               child: Text(
                 "Volunteer",
                 style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Abyssinica_SIL',
+                  color: Color(0XFF56BD54),
+                  fontFamily: 'poppins',
                   fontSize: 50,
+                  shadows: [
+                    Shadow(
+                      offset: Offset(0, 4),
+                      blurRadius: 4,
+                      color: Color.fromRGBO(0, 0, 0, 0.25),
+                    )
+                  ]
                 ),
               ),
             ),
@@ -66,10 +75,10 @@ class _welcome_volunteerState extends State<welcome_volunteer> {
             ),
             const Center(
               child: Text(
-                "To continue login/sign up",
+                "To continue ..",
                 style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Inter',
+                  color: Color(0XFF56BD54),
+                  fontFamily: 'RoackNRoll',
                   fontSize: 25,
                 ),
               ),
@@ -77,50 +86,59 @@ class _welcome_volunteerState extends State<welcome_volunteer> {
             const SizedBox(
               height: 30,
             ),
-            TextButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Volunteerlogin1()));
-                },
-                child: Container(
-                  padding: const EdgeInsets.fromLTRB(65, 4, 65, 4),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.white,
-                  ),
-                  child: const Text(
-                    "LOGIN",
-                    style: TextStyle(
+            Center(
+              child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Volunteerlogin1()));
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.fromLTRB(65, 4, 65, 4),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.black
+                      )
+                    ),
+                    child: const Text(
+                      "LOGIN",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: 'Inter',
+                          fontSize: 28,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  )),
+            ),
+            Center(
+              child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const VolunteerRegistration()));
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.fromLTRB(50, 4, 50, 4),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: Colors.black
+                      )
+                    ),
+                    child: const Text(
+                      "SIGN UP",
+                      style: TextStyle(
                         color: Colors.black,
-                        fontFamily: 'Inter',
-                        fontSize: 28,
-                        fontWeight: FontWeight.w500),
-                  ),
-                )),
-            TextButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const VolunteerRegistration()));
-                },
-                child: Container(
-                  padding: const EdgeInsets.fromLTRB(50, 4, 50, 4),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.black,
-                  ),
-                  child: const Text(
-                    "SIGN UP",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 28,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500),
-                  ),
-                )),
+                          fontSize: 28,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500),
+                    ),
+                  )),
+            ),
             const SizedBox(
               height: 20,
             ),
@@ -131,35 +149,27 @@ class _welcome_volunteerState extends State<welcome_volunteer> {
             const SizedBox(
               height: 40,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SignInButton(
-                  Buttons.Google,
-                  onPressed: () {},
-                ),
-                /*  InkWell(
-                  onTap: () {},
-                  child: Container(
-                    width: 35,
-                    height: 35,
-                    margin: EdgeInsets.all(5.0),
-                    color: Colors.white, // Set the background color to white
-                    child: const Image(
-                      image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"),
-                    ),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SignInButton(
+                    btnColor: Color(0XFF56BD54),
+                    btnText: "Google Account",
+                    width: 170,
+                    btnTextColor: Colors.white,
+                    buttonType: ButtonType.google,
+                    onPressed: () {},
                   ),
-                ),
-                SignInButton(
-                  Buttons.Facebook,
-                  mini: true,
-                  onPressed: () {},
-                ),*/
-                SignInButton(
-                  Buttons.Apple,
-                  onPressed: () {},
-                ),
-              ],
+                  SignInButton(
+                    btnColor: Color(0XFF56BD54),
+                      width: 170,
+                      btnTextColor: Colors.white,
+                      buttonType: ButtonType.apple,
+                      onPressed: () {}
+                  )
+                ],
+              ),
             )
           ],
         ),
